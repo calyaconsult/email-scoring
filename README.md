@@ -30,7 +30,7 @@ The tool helps users detect **phishing** and **spam** by scoring different indic
 Clone the repository and open `index.html` in your browser:
 
 ```bash
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/calyaconsult/email-scoring.git
 cd <repo-name>
 open index.html   # or double-click it on Windows
 ```
