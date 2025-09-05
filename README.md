@@ -25,7 +25,13 @@ The tool helps users detect **phishing** and **spam** by scoring different indic
   - *Zurücksetzen* → clear all answers and results
 
 ---
+⚠ **Disclaimer:**  
+**Important:** This software is provided for **instructional purposes only**.
+Its main goal is to **illustrate the concept of scoring e-mails** based on certain criteria.
+It is **not intended** for production-ready e-mail classification, spam detection, or phishing protection.
+Users should **not rely on it for security-critical decisions.**
 
+---
 ## 🚀 Demo
 Clone the repository and open `index.html` in your browser:
 
