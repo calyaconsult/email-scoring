@@ -31,8 +31,8 @@ Clone the repository and open `index.html` in your browser:
 
 ```bash
 git clone https://github.com/calyaconsult/email-scoring.git
-cd <repo-name>
-open index.html   # or double-click it on Windows
+cd email-scoring
+xdg-open index.html # or open manually in browser
 ```
 ---
 
