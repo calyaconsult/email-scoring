@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Mail-Sicherheitscheckliste</title>
+  <link rel="styleheet" href="style.css"/>
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <h1>Checkliste zur Bewertung von E-Mail-Sicherheitsrisiken</h1>
+  <p><strong>Anleitung:</strong> Bewerten Sie jede Frage mit 0–3 Punkten. Die Gesamtpunktzahl wird automatisch berechnet, um die Risikostufe zu bestimmen.</p>
+
+  <form id="riskForm">
+
+    <!-- 1. Absenderüberprüfung -->
+    <div class="category">
+      <h2>1. Absenderüberprüfung</h2>
+
+      <div class="question">
+        <strong>Bekanntheit des Absenders</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="absender_bekanntheit" value="0" required> Völlig fremd/unerwartet</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="absender_bekanntheit" value="1"> Vage bekannt</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="absender_bekanntheit" value="2"> Bekannter Kontakt, aber ungewöhnliche Kommunikation</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="absender_bekanntheit" value="3"> Regelmässiger, erwarteter Kontakt</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Absendername vs. E-Mail-Adresse</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="absender_name_email" value="0" required> Keine Übereinstimmung</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="absender_name_email" value="1"> Teilweise/verdächtig</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="absender_name_email" value="2"> Geringe Unstimmigkeit</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="absender_name_email" value="3"> Stimmt überein oder plausible Abweichung</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Rechtschreibung der Adresse</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="absender_rechtschreibung" value="0" required> Offensichtliche Fehler (z. B. gmai1.com)</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="absender_rechtschreibung" value="1"> Verdächtige Variation</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="absender_rechtschreibung" value="2"> Etwas seltsam, aber möglich</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="absender_rechtschreibung" value="3"> Korrekt und plausibel</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Unternehmensdomäne</strong> <span class="weight" data-weight="0.0938">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="absender_domäne" value="0" required> Eindeutig gefälscht</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="absender_domäne" value="1"> Ähnlich, aber verdächtig</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="absender_domäne" value="2"> Ungewöhnliche Subdomain</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="absender_domäne" value="3"> Offizielle Domäne oder N/A</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Inhaltsanalyse -->
+    <div class="category">
+      <h2>2. Inhaltsanalyse</h2>
+
+      <div class="question">
+        <strong>Dringlichkeit</strong> <span class="weight" data-weight="0.0313">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="inhalt_drang" value="0" required> Extreme Panikmache („Sofort handeln!“)</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="inhalt_drang" value="1"> Hoher Druck spürbar</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="inhalt_drang" value="2"> Leichte Dringlichkeit, aber nachvollziehbar</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="inhalt_drang" value="3"> Keine unnatürliche Dringlichkeit</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Grammatik und Rechtschreibung</strong> <span class="weight" data-weight="0.0313">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="inhalt_grammatik" value="0" required> Viele grobe Fehler</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="inhalt_grammatik" value="1"> Mehrere Fehler, schlechte Qualität</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="inhalt_grammatik" value="2"> Wenige kleine Fehler</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="inhalt_grammatik" value="3"> Professionell verfasst</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Angeforderte Informationen</strong> <span class="weight" data-weight="0.0938">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="inhalt_daten" value="0" required> Fragt nach Passwörtern/Finanzdaten</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="inhalt_daten" value="1"> Sensible persönliche Daten angefordert</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="inhalt_daten" value="2"> Halb-sensible Daten angefordert</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="inhalt_daten" value="3"> Keine sensiblen Daten angefordert</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Anhänge</strong> <span class="weight" data-weight="0.0938">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="inhalt_anhänge" value="0" required> Verdächtige Dateien (.exe, unerwartete .zip)</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="inhalt_anhänge" value="1"> Unerwartete Anhänge</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="inhalt_anhänge" value="2"> Erwartet, aber ungewöhnlich</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="inhalt_anhänge" value="3"> Erwartete/sichere Dateien oder keine Anhänge</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Links in der E-Mail</strong> <span class="weight" data-weight="0.0938">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="inhalt_links" value="0" required> Verdächtige/fremde Domains</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="inhalt_links" value="1"> Verkürzte/unklare URLs</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="inhalt_links" value="2"> Wirken grösstenteils legitim</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="inhalt_links" value="3"> Keine Links oder geprüfte legitime Links</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Kontext & Logik -->
+    <div class="category">
+      <h2>3. Kontext & Logik</h2>
+
+      <div class="question">
+        <strong>Erwartungshaltung</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="kontext_erwartung" value="0" required> Völlig unerwartet/irrelevant</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="kontext_erwartung" value="1"> Eher unerwartet</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="kontext_erwartung" value="2"> Könnte erwartet werden</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="kontext_erwartung" value="3"> Erwartetes oder passendes Timing</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Angemessenheit der Anfrage</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="kontext_angemessenheit" value="0" required> Völlig unangemessen</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="kontext_angemessenheit" value="1"> Ungewöhnlich/verdächtig</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="kontext_angemessenheit" value="2"> Etwas seltsam, aber denkbar</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="kontext_angemessenheit" value="3"> Völlig angemessen</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Beziehung zu Konto/Dienst</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="kontext_konto" value="0" required> Behauptungen zu Konten, die Sie nicht haben</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="kontext_konto" value="1"> Fragwürdige Forderungen</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="kontext_konto" value="2"> Könnte zutreffen</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="kontext_konto" value="3"> Bestätigtes Konto/Dienst oder N/A</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Technische Indikatoren -->
+    <div class="category">
+      <h2>4. Technische Indikatoren</h2>
+
+      <div class="question">
+        <strong>Spam-Filter</strong> <span class="weight" data-weight="0.0625">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="tech_spam" value="0" required> Vom System als Spam markiert</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="tech_spam" value="1"> Im Spam-Ordner ohne klare Kennzeichnung</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="tech_spam" value="2"> Grenzwertige Anzeichen</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="tech_spam" value="3"> Spam-Filter unauffällig passiert</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Empfänger sichtbar</strong> <span class="weight" data-weight="0.0313">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="tech_empfaenger" value="0" required> Viele sichtbare Empfänger bei persönlicher Mail</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="tech_empfaenger" value="1"> Einige unerwartete Empfänger</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="tech_empfaenger" value="2"> Angemessen mit BCC verwendet</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="tech_empfaenger" value="3"> Korrekt nur an Sie adressiert</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <strong>Reply-to-Adresse</strong> <span class="weight" data-weight="0.0938">(Gewichtung: 6.25%)</span>
+        <div class="options">
+          <label class="option"><span class="score">0:</span> <input type="radio" name="tech_replyto" value="0" required> Völlig andere Adresse als Absender</label>
+          <label class="option"><span class="score">1:</span> <input type="radio" name="tech_replyto" value="1"> Verdächtig abweichend</label>
+          <label class="option"><span class="score">2:</span> <input type="radio" name="tech_replyto" value="2"> Leicht abweichend, erklärbar</label>
+          <label class="option"><span class="score">3:</span> <input type="radio" name="tech_replyto" value="3"> Stimmt überein oder N/A</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="scoring-mode">
+      <label>
+        <input type="radio" name="scoringMode" value="weighted" checked>
+        Gewichtete Bewertung
+      </label>
+      <label>
+        <input type="radio" name="scoringMode" value="unweighted">
+        Ungewichtete Bewertung
+      </label>
+    </div>
+
+    <div id="scoreResult"></div>
+    <button type="button" onclick="calculateRisk()">Risiko berechnen</button>
+    <button type="button" onclick="fillRandom()">Test (zufällige Werte)</button>
+    <button type="button" onclick="resetForm()">Zurücksetzen</button>
+
+    <div class="result" id="result">
+      <h3>Bewertungsskala</h3>
+      <p><strong>Maximalpunkte:</strong> 45</p>
+      <ul>
+        <li><strong>0–15 Punkte</strong> → <span style="color:red;">HOHES RISIKO 🔴</span><br>Wahrscheinlich Spam/Phishing. Nicht interagieren. Sofort löschen oder melden.</li>
+        <li><strong>16–30 Punkte</strong> → <span style="color:orange;">MÄSSIGES RISIKO 🟡</span><br>Vorsicht! Identität unabhängig prüfen. Keine Links/Anhänge öffnen, bevor geklärt.</li>
+        <li><strong>31–45 Punkte</strong> → <span style="color:green;">GINGES RISIKO 🟢</span><br>Wirkt legitim. Dennoch wachsam bleiben, ungewöhnliche Anfragen prüfen.</li>
+      </ul>
+      <p><strong>Ihr Ergebnis:</strong> <span id="scoreResult">Bitte beantworten Sie alle Fragen und klicken Sie auf „Risiko berechnen“.</span></p>
+    </div>
+
+    <div class="result">
+      <h3>Schnelle Massnahmen</h3>
+      <ul>
+        <li><strong>≤15 Punkte:</strong> Nicht antworten, nichts anklicken, löschen/melden. Wenn vorgetäuschter Kontakt: betroffene Person warnen.</li>
+        <li><strong>16–30 Punkte:</strong> Identität über unabhängige Kanäle prüfen (z. B. offizielle Website, Telefon). Keine direkte Antwort auf die Mail.</li>
+        <li><strong>≥31 Punkte:</strong> Normal weiterarbeiten, aber immer misstrauisch bleiben.</li>
+      </ul>
+      <p><strong>Tipp:</strong> Vertrauen Sie Ihrem Instinkt. Wenn sich eine E-Mail „falsch“ anfühlt, behandeln Sie sie mit Vorsicht – unabhängig von der Punktzahl.</p>
+    </div>
+
+    <div class="footer">
+      <p>Datenquelle: <a href="https://docs.google.com/spreadsheets/d/1Nte_zCv5MVPbckmAgMgo4cLKPxCiqwLDbcrX_DdCd5A/edit?usp=sharing">Spreadsheet</a></p>
+    </div>
+  </form>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
